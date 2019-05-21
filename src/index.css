@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+div.weather__extra__info {
+  margin: 20px 0px;
+}
+
+div.weather__extra__info span {
+  display: block;
+  margin: 10px 0px;
+}
+
+div.weather__extra__info span:last-child {
+  margin: 0px;
+}
