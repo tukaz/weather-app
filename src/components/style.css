@@ -1,0 +1,14 @@
+.details h2 {
+    text-align: center;
+    padding: 20px 0px;
+    color: white;
+    margin: 0px;
+}
+
+@media (max-width:768px) {
+    .locationList {
+        height: 40vh;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+}
