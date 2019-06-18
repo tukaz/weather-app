@@ -13,8 +13,9 @@
 }
 
 .weatherLocationCont {
+    cursor: pointer;
     width: calc(100% - 20px);
-    margin: 0 10px;
+    margin: 20px 10px;
     min-width: 350px;
     padding: 25px;
     font-family: "Roboto", sans-serif;

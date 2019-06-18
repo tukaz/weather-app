@@ -19,7 +19,6 @@ class App extends Component {
 
 
   handleSelectedLocation = (city) => {
-    console.log(`handleSelectedLocation ${city}`);
     this.setState({
       selectedCity : city
     });

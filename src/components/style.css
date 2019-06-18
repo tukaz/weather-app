@@ -5,6 +5,12 @@
     margin: 0px;
 }
 
+.locationList {
+    margin-top: 15px;
+    overflow: auto;
+    height: 85vh;
+}
+
 @media (max-width:768px) {
     .locationList {
         height: 40vh;

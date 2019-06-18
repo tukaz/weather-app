@@ -8,7 +8,6 @@ import './style.css'
 const LocationList = ({cities,onSelectedLocation}) => {
 
     const handleLocationClick = (city) => {
-        console.log(`handleLocationClick ${city}`);
         onSelectedLocation(city);
     };
     

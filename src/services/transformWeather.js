@@ -1,5 +1,8 @@
 
 import convert from 'convert-units';
+import 'moment/locale/es';
+import moment from 'moment';
+
 import {
     SUN,
     CLOUD,
@@ -30,7 +33,7 @@ const getWeatherState = (weather) => {
     }
 }
 
-const transData = (weatherData) => {
+export const transData = (weatherData) => {
         const {temp,humidity} = weatherData.main;
         const {wind} = weatherData;
         const data = {
@@ -43,5 +46,20 @@ const transData = (weatherData) => {
         return data;
     }
 
-
-export default transData;
+export const transForecast = (forecastData) => {
+    const forecastList = forecastData['list'].filter( (item) => {
+       return moment.unix(item.dt).format('HH').match('06|12|18');
+    });
+    
+    return forecastList.map( (item) => {
+        const dtForecast = moment.unix(item.dt);
+        return (
+            {
+                date : item.dt,
+                day : dtForecast.format('dddd').toUpperCase(),
+                hour: dtForecast.format('HH:mm'),
+                data : transData(item)            
+            }             
+        )
+    });
+}

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {CircularProgress} from '@material-ui/core';
 import {PropTypes} from 'prop-types';
 import WeatherData from './WeatherData';
-import getURLWeatherLocation from '../../services/getURLWeatherLocation';
-import transData from '../../services/transformWeather';
+import {getURLWeatherLocation} from '../../services/getURLWeatherLocation';
+import {transData} from '../../services/transformWeather';
 import Location from './Location';
 import './style.css';
 
