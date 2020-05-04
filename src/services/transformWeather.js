@@ -47,11 +47,11 @@ export const transData = (weatherData) => {
     }
 
 export const transForecast = (forecastData) => {
-    const forecastList = forecastData['list'].filter( (item) => {
+    return forecastData['list']
+    .filter( (item) => {
        return moment.unix(item.dt).format('HH').match('06|12|18');
-    });
-    
-    return forecastList.map( (item) => {
+    })
+    .map( (item) => {
         const dtForecast = moment.unix(item.dt);
         return (
             {

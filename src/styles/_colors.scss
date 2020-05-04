@@ -1,0 +1,20 @@
+$title_color: rgb(10, 0, 2);
+
+$fontsize: 12px;
+
+.speaker{
+    .name {
+        font {
+            font-weight: bold;
+            size: $fontsize + 10px;
+        }
+
+    }
+    .position {
+        font {
+            size: $fontsize
+        }
+    
+    }
+}
+

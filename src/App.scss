@@ -1,3 +1,5 @@
+@import 'styles/_colors.scss';
+
 .App {
   text-align: center;
 }
@@ -23,13 +25,25 @@
   color: #61dafb;
 }
 
+@mixin border-radius($amount: 5px){
+  -moz-border-radius: $amount;
+  -webkit-border-radius: $amount;
+  border-radius: $amount;
+}
+
+%wrapper {
+  background-color: #03A9F4;
+}
+
 .details {
+  @extend %wrapper;
   width: 100%;
   height: 85vh;
-  background-color: grey;
   overflow: auto;
   padding: 0 20px;
   margin-top: 15px; 
+  color: $title_color;
+  @include border-radius(10px);
 }
 
 @keyframes App-logo-spin {
@@ -40,3 +54,4 @@
     transform: rotate(360deg);
   }
 }
+
