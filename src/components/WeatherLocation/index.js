@@ -11,24 +11,25 @@ class WeatherLocation extends Component {
 
     constructor(props) {
         super(props);
+        const {onWeatherLocationClick} = props;
         const {city} = props;
         this.state = {
             city,
+            onWeatherLocationClick,
             data: null,
         }
     }                                                                    
 
     componentDidMount() {
-        this.handleClick();
+        this.init();
     }
  
     componentDidUpdate(prevProps, prevState) {
         
     }                
-    
-    
+ 
 
-    handleClick = () => {
+    init = () => {
         const API_WEATHER = getURLWeatherLocation(this.state.city);
         fetch(API_WEATHER).then(
             resolve => resolve.json()
@@ -42,8 +43,7 @@ class WeatherLocation extends Component {
     }
 
     render(){
-        const {city, data} = this.state;
-        const {onWeatherLocationClick} = this.props;
+        const {city, data, onWeatherLocationClick} = this.state;
         return(
             <div className="weatherLocationCont" onClick={onWeatherLocationClick} >
                 <Location city={city} />

@@ -30,21 +30,51 @@ class ForecastExtended extends Component {
 
     componentDidMount() {
         this.updateForecastItem(this.props.city);
+        console.log("componentDidMount");
+
     }
 
+    // static getDerivedStateFromProps(nextProps, prevState){
+    //     console.log("getDerivedStateFromProps")
+    //     console.log(prevState);
+    //     if(nextProps.city!==prevState.city){
+    //         console.log("getDerivedStateFromProps insde")
+
+    //         return { 
+    //             forecastData: null,
+    //             nextCity: nextProps.city 
+    //         };
+    //    }
+    //    else return null;
+    //  }
+     
+    //  componentDidUpdate(prevProps, prevState) {
+    //     console.log("componentDidUpdate")
+    //     console.log(prevProps)
+    //     console.log(this.props.city)
+    //     console.log(prevState)
+
+    //    if(this.props.city === this.state.nextCity){
+    //     console.log("componentDidUpdate inside")
+
+    //      //Perform some operation here
+    //      this.updateForecastItem(this.props.city);
+    //    }
+    //  }
+
     componentWillReceiveProps(nextProp){
+        console.log("componentWillReceiveProps");
         if(nextProp.city !== this.props.city){
             this.setState({forecastData : null});
             this.updateForecastItem(nextProp.city);
-
         }
     }
     
 
     renderForecastItems(){
-        const forecastItems = this.state.forecastData;
+        const {forecastData} = this.state;
         return (
-            forecastItems.map( (day) => {
+            forecastData.map((day) => {
                 return (
                     <ForecastItem 
                         key={`${day.day}${day.hour}`} 
